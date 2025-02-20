@@ -1,0 +1,49 @@
+-- 
+-- Roll No: 26
+-- Name: K. ANSAR	
+-- Program:
+-- 
+
+
+--
+-- Table structure for table books
+--
+
+create table books(bookid INT PRIMARY KEY,title VARCHAR(100) NOT NULL,author VARCHAR(50) NOT NULL, price DECIMAL(6,2) DEFAULT 0.00);
+alter table books MODIFY COLUMN publication_date DATE;
+alter table books modify price DECIMAL(6,2) DEFAULT 100.00;
+alter table books DROP COLUMN publication_date;
+drop table students;
+
+--
+-- Table structure for table students
+--
+
+create table students(studentid INT PRIMARY KEY,name VARCHAR(100) NOT NULL,course VARCHAR(50) DEFAULT 'MCA',age INT CHECK(age between 20 and 40));
+
+--
+-- Dumping data for table books
+--
+
+insert into books(bookid, title, author, publication_date, price)VALUES(1, 'Database Systems', 'Ramez Elmasri', '1976-10-10', 500.00),(2, 'Operating System Concepts', 'Silberschatz', '1960-11-20', 650.00),(3, 'Computer Networks', 'Andrew S. Tanenbaum', '2000-02-17', 700.00),(4, 'Algorithms', 'Cormen', '2011-01-23', default);
+update books set price='700.00' where title='operating system concepts';
+delete from books where bookid = 3;
+update books set price=price*1.10;
+
+--
+-- Dumping data for table students
+--
+
+insert into students (studentid, name, course, age)VALUES(101, 'Midhun K', 'MCA', 22),(102, 'Ann Mariya', 'MCA', 30),(103, 'Sidharth M', 'MCA', 21);
+
+
+--
+-- SQl Query Statements
+--
+
+-- -----SQL query statments preceeded by the its question-------- # This line may be removed in the actual file
+-- -----Question number should be commented---------------#This line may be removed in the actual file
+
+
+
+
